@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1875475646808911739}
   - component: {fileID: 3315638996445753032}
   - component: {fileID: 6014595277027677216}
+  - component: {fileID: -128234330736701333}
   m_Layer: 0
   m_Name: Unit_Base
   m_TagString: Untagged
@@ -171,3 +172,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.Unit
   team: 0
   stats: {fileID: 0}
+--- !u!114 &-128234330736701333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638148842857445802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7cbcfabf5734d84f9d93d9035a69a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.Health
+  fallbackMaxHp: 1
+  enableDebugLogs: 0
+  debugDamageAmount: 1
