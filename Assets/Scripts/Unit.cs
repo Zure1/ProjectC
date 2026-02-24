@@ -14,6 +14,7 @@ namespace AutoBattler.Core
         [SerializeField] private UnitStats stats;
 
         private bool isRegistered;
+        private Health health;
 
         /// <summary>
         /// Gets the team this unit belongs to.
@@ -35,10 +36,16 @@ namespace AutoBattler.Core
         /// </summary>
         public Collider2D Collider { get; private set; }
 
+        /// <summary>
+        /// Gets the cached health component.
+        /// </summary>
+        public Health Health => health;
+
         private void Awake()
         {
             Body = GetComponent<Rigidbody2D>();
             Collider = GetComponent<Collider2D>();
+            health = GetComponent<Health>();
 
             if (Body == null)
             {
@@ -78,6 +85,11 @@ namespace AutoBattler.Core
                 return;
             }
 
+            if (health != null && health.IsDead)
+            {
+                return;
+            }
+
             BattleManager manager = BattleManager.Instance;
             if (manager == null)
             {
@@ -104,6 +116,33 @@ namespace AutoBattler.Core
 
             manager.Unregister(this);
             isRegistered = false;
+        }
+
+        /// <summary>
+        /// Gets this unit's <see cref="AutoBattler.Core.Health"/> component and logs a clear error when missing.
+        /// </summary>
+        /// <param name="healthComponent">The resolved health component, if found.</param>
+        /// <returns>True if health is present; otherwise false.</returns>
+        public bool TryGetHealth(out Health healthComponent)
+        {
+            healthComponent = health;
+            if (healthComponent != null)
+            {
+                return true;
+            }
+
+            Debug.LogError($"[{nameof(Unit)}] '{name}' is missing {nameof(Health)}. Add it before using health-dependent features.", this);
+            return false;
+        }
+
+        internal void MarkUnregisteredFromBattleManager()
+        {
+            isRegistered = false;
+        }
+
+        internal void RegisterIfPossible()
+        {
+            TryRegister();
         }
     }
 }

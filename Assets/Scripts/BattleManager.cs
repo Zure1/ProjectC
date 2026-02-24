@@ -68,6 +68,12 @@ namespace AutoBattler.Core
                 return;
             }
 
+            Health health = unit.Health;
+            if (health != null && health.IsDead)
+            {
+                return;
+            }
+
             List<Unit> targetList = GetList(unit.Team);
             if (targetList.Contains(unit))
             {
