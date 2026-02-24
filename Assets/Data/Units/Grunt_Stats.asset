@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.UnitStats
   <MaxHP>k__BackingField: 20
   <Damage>k__BackingField: 4
-  <MoveSpeed>k__BackingField: 1
-  <AttackRange>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 2.5
+  <AttackRange>k__BackingField: 2
   <AttackCooldown>k__BackingField: 1
+  <AttackType>k__BackingField: 0
+  <ProjectileSpeed>k__BackingField: 6
+  <ProjectilePrefab>k__BackingField: {fileID: 0}
