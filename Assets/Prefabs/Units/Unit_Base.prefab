@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 3315638996445753032}
   - component: {fileID: 6014595277027677216}
   - component: {fileID: -128234330736701333}
+  - component: {fileID: 500116398199894171}
+  - component: {fileID: 4606380908122960593}
+  - component: {fileID: 4261384021054217725}
+  - component: {fileID: 887029050804944362}
   m_Layer: 0
   m_Name: Unit_Base
   m_TagString: Untagged
@@ -187,3 +191,52 @@ MonoBehaviour:
   fallbackMaxHp: 1
   enableDebugLogs: 0
   debugDamageAmount: 1
+--- !u!114 &500116398199894171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638148842857445802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4257c2f7468f3bf4592e8e3d92780788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.TargetScanner
+--- !u!114 &4606380908122960593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638148842857445802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab57b15e7b18e94bb1fb6765cbd19ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.Mover
+--- !u!114 &4261384021054217725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638148842857445802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f20db6f6c4515408274a45cf29cc10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.Attacker
+  showAttackRangeGizmo: 0
+--- !u!114 &887029050804944362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6638148842857445802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c90efecab6abd4fb48165696706d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoBattler.Core.UnitBrain

@@ -39,15 +39,6 @@ namespace AutoBattler.Core
             Instance = this;
         }
 
-        private void OnEnable()
-        {
-            Unit[] units = FindObjectsByType<Unit>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
-            for (int i = 0; i < units.Length; i++)
-            {
-                Register(units[i]);
-            }
-        }
-
         private void OnDisable()
         {
             if (Instance == this)

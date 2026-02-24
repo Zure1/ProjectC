@@ -9,6 +9,7 @@ namespace AutoBattler.Core
     public sealed class UnitStats : ScriptableObject
     {
         private const float MinCooldown = 0.01f;
+        private const float MinProjectileSpeed = 0.01f;
 
         /// <summary>
         /// Gets the maximum health value for the unit.
@@ -40,6 +41,24 @@ namespace AutoBattler.Core
         [field: SerializeField]
         public float AttackCooldown { get; private set; } = 1f;
 
+        /// <summary>
+        /// Gets which attack execution type this unit uses.
+        /// </summary>
+        [field: SerializeField]
+        public AttackType AttackType { get; private set; } = AttackType.Melee;
+
+        /// <summary>
+        /// Gets projectile speed for future ranged attacks.
+        /// </summary>
+        [field: SerializeField]
+        public float ProjectileSpeed { get; private set; } = 6f;
+
+        /// <summary>
+        /// Gets projectile prefab for future ranged attacks.
+        /// </summary>
+        [field: SerializeField]
+        public GameObject ProjectilePrefab { get; private set; }
+
         private void OnValidate()
         {
             MaxHP = Mathf.Max(0f, MaxHP);
@@ -47,6 +66,7 @@ namespace AutoBattler.Core
             MoveSpeed = Mathf.Max(0f, MoveSpeed);
             AttackRange = Mathf.Max(0f, AttackRange);
             AttackCooldown = Mathf.Max(MinCooldown, AttackCooldown);
+            ProjectileSpeed = Mathf.Max(MinProjectileSpeed, ProjectileSpeed);
         }
     }
 }
