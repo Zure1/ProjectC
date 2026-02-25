@@ -79,22 +79,5 @@ namespace AutoBattler.Core
 
             mover.SetMoveTarget(target);
         }
-
-        private void HandleDeadUnit()
-        {
-            Health selfHealth = unit.Health;
-            if (selfHealth != null && selfHealth.IsDead)
-            {
-                mover.Stop();
-                targetScanner.UpdateTarget();
-                Unit deadUnitTarget = targetScanner.CurrentTarget;
-                if (deadUnitTarget != null)
-                {
-                    attacker.TryStartAttack(deadUnitTarget);
-                }
-
-                return;
-            }
-        }
     }
 }
